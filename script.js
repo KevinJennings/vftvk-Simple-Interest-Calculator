@@ -6,6 +6,9 @@ function compute()
     Best to check now before trying to use invalid input in a calculation. */
     if (principal <= 0) {
         alert("Enter a positive number.");
+        
+        // Reset focus
+        document.getElementById("principal").focus();
         return;
     }
 
