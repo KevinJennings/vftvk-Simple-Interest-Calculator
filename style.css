@@ -1,4 +1,69 @@
-body {background-color:tan;}
-h1{color:green;}
+/* Set standard element style attributes */
+body {
+    background-color:black;
+    font-family:arial;color:white
+}
 
+h1{
+    color:grey;
+    font-family:verdana
+}
 
+td {
+    padding: 3px;
+}
+
+/* In order to have the <H1> in the <div> not wrap, I've increased
+the width of the <div> to match the example image of the finished product from
+the Project Preparation instructions. */
+.maindiv {
+    background-color:white;
+    color:black;
+    width:480px;    
+    padding:20px;
+    border-radius:25px;    
+
+    /* The instructions say "Align the div to the center of the page". 
+    There is no 'align' CSS attribute, but there is an HTML align attribute.
+    We can't use an HTML align attribute within a CSS stylesheet, and W3 Schools recommends
+    the following way to center a <div>, using 'margin' */
+    margin:0 auto;       
+}
+
+/* Although not specified in the instructions, the text under the <H1>
+in the example image shows how the final product should look and it indicates that
+the label & input fields should be centered under the heading. 
+
+The fields and labels on the screen are in a simple label => input order that
+is best displayed in a columnar format. Since we are not using bootstrap, a simple
+HTML table will be used to display the labels and input fields in order to have the
+resulting app looks as close to the example image as possible. */ 
+.maindiv-table { 
+    margin-left: auto;
+    margin-right: auto;
+    width: 23em;
+}
+
+.maindiv-table-column1 {
+    width: 10em;
+}
+
+/* Make column2 slightly larger to accomodate larger interest rate values (i.e. "10%" vs "10.25%") */
+.maindiv-table-column2 {
+    width: 25em;
+}
+
+/* Make the button's cell larger so the button text does not wrap */
+.maindiv-table-button {
+    width: 30em;
+}
+
+/* Make the result cell larger so the word breaks are as indicated in the example image */
+.maindiv-table-result {
+    width: 100em;
+}
+/* Style for highlight results */
+.highlight {
+    display:inline;
+    background-color: yellow;
+}
