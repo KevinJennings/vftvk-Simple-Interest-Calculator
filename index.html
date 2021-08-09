@@ -1,16 +1,60 @@
-<html>
+<!DOCTYPE html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+        <title>Simple Interest Calculator</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
+    <body>        
+        <div class="maindiv">
+            <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+            <!-- We're using a table here since the data is best displayed in
+            a columnar format to better match the example image. For display of
+            simple data like this, tables work best. But, for any other kind of
+            positioning on screen, bootstrap should be considered. -->
+            <table class="maindiv-table">
+                <tr>
+                    <td class="maindiv-table-column1">Amount</td>
+                    <td class="maindiv-table-column2"><input type="number"  id="principal"></td>
+                </tr>
+                <tr>
+                    <td class="maindiv-table-column1">Interest Rate</td>
+                    <td class="maindiv-table-column2"><input type="range" id="rate" onchange="updateRate()" min="1" max="20" step="0.25" value="10.25">
+                        <span id="rate_val">10.25%</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="maindiv-table-column1">No. of Years</td>
+                    <td class="maindiv-table-column2">
+                        <select id="years">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option> 
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="maindiv-table-button">
+                        <button onclick="compute()">Compute Interest</button>                        
+                    </td>                    
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <span id="result"></span>
+                    </td>                    
+                </tr>
+            </table>
 
-        <button onclick="compute()">Compute</button>
+            <footer>
+                &#169; Everyone Can Get Rich
+            </footer>
+        </div>
     </body>
 </html>
